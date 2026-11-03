@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 @Repository
 public class RepositorioLibrosMemoria implements RepositorioLibros{
-
+    private long siguienteId = 1;
     private final List<Libros> libros = new ArrayList<>();
 
     @Override
@@ -24,5 +24,12 @@ public class RepositorioLibrosMemoria implements RepositorioLibros{
     @Override
     public List<Libros> listar() {
         return new ArrayList<>(libros);
+    }
+
+    @Override
+    public Libros guardar(Libros libro1) {
+        libro1.setId(siguienteId++);
+        libro1.add(libro1);
+        return libro1;
     }
 }

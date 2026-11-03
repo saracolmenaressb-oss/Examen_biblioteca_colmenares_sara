@@ -8,4 +8,5 @@ import java.util.Optional;
 public interface RepositorioLibros {
     Optional<Libros> buscarPorId(Long id);
     List<Libros> listar();
+    Libros guardar(Libros estudiante);
 }
